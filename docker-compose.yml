@@ -1,0 +1,15 @@
+version: '3.9'
+
+services:
+  garbage_app:
+    build: .
+    expose:
+      - "8000"
+    restart: unless-stopped
+
+  nginx:
+    build: ./nginx
+    ports:
+      - "80:80"
+    depends_on:
+      - garbage_app
