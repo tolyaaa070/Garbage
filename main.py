@@ -33,7 +33,7 @@ class Model(nn.Module):
     x =self.second(x)
     return x
 
-classes = torch.load('classes.pt')
+classes = ['cardboard', 'glass', 'metal', 'paper', 'plastic', 'trash']
 
 model = Model()
 model.load_state_dict(torch.load('model_gar.pth', map_location=device))
